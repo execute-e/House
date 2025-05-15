@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ink. House | Home page</title>
+    <link rel="stylesheet" href="src/styles/main.css">
+  </head>
+  <body>
+    <header class="header" data-js-header>
+      <div class="header__inner container">
+          <a href="/" class="header__logo" aria-current="page" aria-label="На главную">
+            <img
+              src="UI/icons/logo.svg"
+              alt="Ink. House"
+              class="header__image"
+              width="143" height="35"
+              decoding="async"
+            >
+          </a>
+          <div class="header__right-menu">
+            <nav class="header__navigation">
+              <ul class="header__list">
+                <li class="header__item">
+                  <a href="/" class="header__link">Репродукции</a>
+                </li>
+                <li class="header__item">
+                  <a href="/" class="header__link">Новинки</a>
+                </li>
+                <li class="header__item">
+                  <a href="/" class="header__link">О нас</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="header__burger-button burger-button" type="button" data-js-header-burger-button>
+              <span class="burger-button__line"></span>
+              <span class="burger-button__line"></span>
+              <span class="burger-button__line"></span>
+            </button>
+            <button class="header__cart-button" type="button" data-js-header-cart-button>
+              <img
+                src="UI/icons/header/button.svg"
+                alt="Cart"
+                class="header__icon fsh0"
+                width="24" height="24" loading="lazy"
+                decoding="async"
+              >
+            </button>
+          </div>
+      </div>
+      <nav class="header__second-menu container" data-js-header-nav>
+              <ul class="header__list">
+                <li class="header__item">
+                  <a href="/" class="header__link">Репродукции</a>
+                </li>
+                <li class="header__item">
+                  <a href="/" class="header__link">Новинки</a>
+                </li>
+                <li class="header__item">
+                  <a href="/" class="header__link">О нас</a>
+                </li>
+              </ul>
+      </nav>
+    </header>
+
+    <section class="hero section" aria-labelledby="hero-title hero-description" id="hero">
+      <div class="hero__inner container">
+        <img
+          src="UI/images/hero/1.png"
+          alt=""
+          class="hero__image"
+          width="540" height="621" loading="lazy"
+          decoding="async"
+        >
+        <div class="hero__info">
+          <div class="hero__text">
+            <h1 class="hero__title" id="hero-title">Реплики картин от <span class="color-accent">Ink. House</span></h1>
+            <p class="hero__subtitle" id="hero-description">Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.</p>
+          </div>
+          <a href="/" class="hero__button btn">Продукция</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="src/scripts/main.js" type="module" defer></script>
+  </body>
+</html>

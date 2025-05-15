@@ -1,0 +1,430 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+  list-style: none;
+}
+
+:where(address[class]) {
+  font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  height: 100%;
+  /**
+    Убираем скачок интерфейса по горизонтали
+    при появлении / исчезновении скроллбара
+   */
+  scrollbar-gutter: stable;
+}
+
+/**
+  Плавный скролл
+ */
+html,
+:has(:target) {
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+    Пригодится в большинстве ситуаций
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+   */
+  min-height: 100%;
+  /**
+    Унифицированный интерлиньяж
+   */
+  line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+  display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+  cursor: pointer;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not([fill=none],
+[fill^=url])) {
+  fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not([stroke=none],
+[stroke^=url])) {
+  stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+  border-collapse: collapse;
+  border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --color-light: #F4F6F5;
+  --color-accent: #598D66;
+  --color-dark: #2C2D35;
+  --color-gray: #86928B;
+  --color-yellow: #EEDB6D;
+  --background-color-accent: #E1EDE6;
+  --font-family-base: "Raleway", sans-serif;
+  --container-width: 69.375rem;
+  --container-padding-x: 0.9375rem;
+  --transition-duration: 0.2s;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../../UI/fonts/Raleway-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+  font-size: 1.25rem;
+}
+@media (width <= 63.9375rem) {
+  a {
+    font-size: 1.125rem;
+  }
+}
+@media (any-hover: hover) {
+  a:hover {
+    color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  a:active {
+    color: var(--color-accent);
+  }
+}
+a[class] {
+  text-decoration: none;
+}
+a.is-active {
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+:focus-visible {
+  outline: 0.125rem dashed var(--color-light);
+  outline-offset: 0.25rem;
+  transition-duration: 0s !important;
+}
+
+main {
+  flex-grow: 1;
+}
+
+body {
+  font-size: clamp(1rem, 0.9567307692rem + 0.1923076923vw, 1.125rem);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-base);
+  letter-spacing: 0;
+  line-height: 1.4;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+h1, .h1 {
+  font-size: clamp(1.875rem, 1.2259615385rem + 2.8846153846vw, 3.75rem);
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+@media (width <= 47.9375rem) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+@media (width > 47.9375rem) {
+  .visible-mobile {
+    display: none !important;
+  }
+}
+
+.color-accent {
+  color: var(--color-accent);
+}
+
+.fsh0 {
+  flex-shrink: 0;
+}
+
+.header {
+  background-color: var(--background-color-accent);
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 2.0625rem;
+}
+@media (width <= 47.9375rem) {
+  .header__inner {
+    flex-direction: column;
+    row-gap: 1rem;
+    padding-block: 1rem;
+  }
+}
+.header__right-menu {
+  display: flex;
+  column-gap: 3.75rem;
+}
+@media (width <= 47.9375rem) {
+  .header__right-menu {
+    padding-top: 1rem;
+    border-top: 0.0625rem solid var(--color-gray);
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+.header__list {
+  display: flex;
+  column-gap: 3.75rem;
+}
+.header__cart-button {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__cart-button.is-hidden {
+  display: none;
+}
+@media (width > 47.9375rem) {
+  .header__burger-button {
+    display: none !important;
+  }
+}
+@media (width <= 47.9375rem) {
+  .header__navigation {
+    display: none;
+  }
+}
+.header__second-menu {
+  padding-block: 1rem;
+}
+.header__second-menu .header__list {
+  flex-direction: column;
+  row-gap: 3.125rem;
+}
+.header__second-menu:not(.is-active) {
+  display: none;
+}
+
+.burger-button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3125rem;
+  width: 1.25rem;
+  padding: 0;
+  align-items: center;
+}
+.burger-button__line {
+  transition-duration: var(--transition-duration);
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--color-dark);
+}
+@media (any-hover: hover) {
+  .burger-button:hover .burger-button__line {
+    background-color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  .burger-button:active .burger-button__line {
+    background-color: var(--color-accent);
+  }
+}
+.burger-button.is-active .burger-button__line:nth-child(2) {
+  opacity: 0;
+}
+.burger-button.is-active .burger-button__line:first-child {
+  rotate: 45deg;
+  translate: 0 0.8125rem;
+}
+.burger-button.is-active .burger-button__line:last-child {
+  rotate: -45deg;
+}
+
+.hero__inner {
+  display: flex;
+  column-gap: 1.875rem;
+  align-items: center;
+}
+
+/*# sourceMappingURL=main.css.map */

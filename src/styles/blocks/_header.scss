@@ -1,0 +1,73 @@
+@use '../helpers' as *;
+
+.header {
+    background-color: var(--background-color-accent);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: rem(33);
+
+        @include mobile-l {
+            flex-direction: column;
+            row-gap: rem(16);
+            padding-block: rem(16);
+        }
+    }
+
+    &__right-menu {
+        display: flex;
+        column-gap: rem(60);
+
+        @include mobile-l {
+            padding-top: rem(16);
+            border-top: rem(1) solid var(--color-gray);
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+
+    &__list {
+        display: flex;
+        column-gap: rem(60);
+    }
+
+    &__cart-button {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.is-hidden {
+            display: none;
+        }
+    }
+
+    &__burger-button {
+        @include mobile-l-above {
+            display: none !important;
+        }
+    }
+
+    &__navigation {
+        @include mobile-l {
+            display: none;
+        }
+    }
+
+    &__second-menu {
+        padding-block: rem(16);
+
+        .header__list {
+            flex-direction: column;
+            row-gap: rem(50);
+        }
+        
+        &:not(.is-active) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@use 'normalize';
+@use 'variables';
+@use 'fonts';
+@use 'globals';
+@use 'utils';
+
+@use 'blocks/header';
+@use 'blocks/burger-button';
+@use 'blocks/hero';
+@use 'blocks/btn';
+@use 'blocks/section';

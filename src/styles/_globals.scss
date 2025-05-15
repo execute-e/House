@@ -1,0 +1,59 @@
+@use "helpers" as *;
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    color: inherit;
+    font-size: rem(20);
+
+    @include tablet {
+        font-size: rem(18);
+    }
+
+    @include hover {
+        color: var(--color-accent);
+    }
+
+    &[class] {
+        text-decoration: none;
+    }
+    
+    &.is-active {
+        color: var(--color-accent);
+        pointer-events: none;
+    }
+}
+
+:focus-visible {
+    outline: rem(2) dashed var(--color-light);
+    outline-offset: rem(4);
+    transition-duration: 0s !important;
+}
+
+main {
+    flex-grow: 1;
+}
+
+body {
+    @include fluid-text(18, 16);
+
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-base);
+    letter-spacing: 0;
+    line-height: 1.4;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+}
+
+h1, .h1 {
+    @include fluid-text(60, 30);
+}

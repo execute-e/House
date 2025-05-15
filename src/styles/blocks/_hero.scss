@@ -1,0 +1,9 @@
+@use '../helpers' as *;
+
+.hero {
+    &__inner {
+        display: flex;
+        column-gap: rem(30);
+        align-items: center;
+    }
+}

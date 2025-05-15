@@ -1,0 +1,18 @@
+{
+  "name": "house",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sass-watch": "sass --watch .",
+    "start": "concurrently \"npm run dev\" \"npm run sass-watch\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.88.0",
+    "vite": "^6.3.5"
+  }
+}
