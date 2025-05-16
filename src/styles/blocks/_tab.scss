@@ -1,0 +1,32 @@
+@use '../helpers' as *;
+
+.tab {
+  background-color: var(--background-color-accent);
+  padding: rem(20);
+  
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(30);
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+
+  &__buy {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &__author {
+    color: var(--color-gray);
+  }
+
+  &__button {
+    @include hover {
+        color: var(--color-accent);
+    }
+  }
+}

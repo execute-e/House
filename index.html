@@ -22,7 +22,7 @@
             <nav class="header__navigation">
               <ul class="header__list">
                 <li class="header__item">
-                  <a href="/" class="header__link">Репродукции</a>
+                  <a href="#tabs" class="header__link">Репродукции</a>
                 </li>
                 <li class="header__item">
                   <a href="/" class="header__link">Новинки</a>
@@ -51,7 +51,7 @@
       <nav class="header__second-menu container" data-js-header-nav>
               <ul class="header__list">
                 <li class="header__item">
-                  <a href="/" class="header__link">Репродукции</a>
+                  <a href="#tabs" class="header__link">Репродукции</a>
                 </li>
                 <li class="header__item">
                   <a href="/" class="header__link">Новинки</a>
@@ -63,7 +63,7 @@
       </nav>
     </header>
 
-    <section class="hero section" aria-labelledby="hero-title hero-description" id="hero">
+    <section class="hero section" aria-labelledby="hero-title hero-description" id="hero" role="region">
       <div class="hero__inner container">
         <img
           src="UI/images/hero/1.png"
@@ -77,7 +77,445 @@
             <h1 class="hero__title" id="hero-title">Реплики картин от <span class="color-accent">Ink. House</span></h1>
             <p class="hero__subtitle" id="hero-description">Высокое качество отрисовки на плотной бумаге или льняном холсте. Редкие произведения, доступные цены.</p>
           </div>
-          <a href="/" class="hero__button btn">Продукция</a>
+          <a href="#tabs" class="hero__button btn" aria-label="Перейти к просмотру продукции">Продукция</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabs section" id="tabs" aria-labelledby="tabs-title" data-js-tabs>
+      <header class="tabs__header container">
+          <h2 class="tabs__title" id="tabs-title">Репродукции</h2>
+          <div class="tabs__buttons" role="tablist">
+            <button 
+              class="tabs__button is-active"
+              type="button"
+              id="tab-1"
+              role="tab"
+              aria-controls="tabpanel-1"
+              data-js-tabs-button
+              aria-selected="true"
+              tabindex="0"
+            >
+              Франция
+            </button>
+            <button 
+              class="tabs__button"
+              type="button"
+              id="tab-2"
+              role="tab"
+              aria-controls="tabpanel-2"
+              data-js-tabs-button
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Германия
+            </button>
+            <button 
+              class="tabs__button"
+              type="button"
+              id="tab-3"
+              role="tab"
+              aria-controls="tabpanel-3"
+              data-js-tabs-button
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Англия
+            </button>
+          </div>
+      </header>
+      <div class="tabs__body container">
+        <div 
+          class="tabs__content is-active" 
+          id="tabpanel-1"
+          aria-labelledby="tab-1"
+          role="tabpanel"
+          data-js-tabs-content
+        >
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/1.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Марсель Руссо</p>
+                  <h3 class="tab__title">Охота Амура</h3>
+                  <h4 class="tab__description">Холст, масло (50х80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">14 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/2.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Анри Селин</p>
+                  <h3 class="tab__title">Дама с собачкой</h3>
+                  <h4 class="tab__description">Акрил, бумага (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">16 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/3.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Франсуа Дюпон</p>
+                  <h3 class="tab__title">Процедура</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">20 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/4.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Луи Детуш</p>
+                  <h3 class="tab__title">Роза</h3>
+                  <h4 class="tab__description">Бумага, акрил (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">12 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/5.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Франсуа Дюпон</p>
+                  <h3 class="tab__title">Птичья трапеза</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">22 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/france/6.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Пьер Моранж</p>
+                  <h3 class="tab__title">Пейзаж с рыбой</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">20 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div 
+          class="tabs__content" 
+          id="tabpanel-2"
+          aria-labelledby="tab-2"
+          aria-hidden="true"
+          role="tabpanel"
+          data-js-tabs-content
+        >
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/1.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Курт Вернер</p>
+                  <h3 class="tab__title">Над городом</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">16 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/2.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Макс Рихтер</p>
+                  <h3 class="tab__title">Птенцы</h3>
+                  <h4 class="tab__description">Холст, масло (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">14 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/3.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Мартин Майер</p>
+                  <h3 class="tab__title">Среди листьев</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">20 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/4.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Герман Беккер</p>
+                  <h3 class="tab__title">Яркая птица</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">13 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/5.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Вульф Бауэр</p>
+                  <h3 class="tab__title">Дятлы</h3>
+                  <h4 class="tab__description">Бумага, акрил (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">20 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/germany/6.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Вальтер Хартманн</p>
+                  <h3 class="tab__title">Большие воды</h3>
+                  <h4 class="tab__description">Бумага, акрил (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">23 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div 
+          class="tabs__content" 
+          id="tabpanel-3"
+          aria-labelledby="tab-3"
+          aria-hidden="true"
+          role="tabpanel"
+          data-js-tabs-content
+        >
+          <ul class="tabs__list">
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/1.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Пол Смит</p>
+                  <h3 class="tab__title">Дикий зверь</h3>
+                  <h4 class="tab__description">Акварель, бумага (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">19 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/2.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Джон Уайт</p>
+                  <h3 class="tab__title">Скалистый берег</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">17 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/3.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Джим Уотсон</p>
+                  <h3 class="tab__title">Река и горы</h3>
+                  <h4 class="tab__description">Акварель, бумага (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">20 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/4.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Юджин Зиллион</p>
+                  <h3 class="tab__title">Белый попугай</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">15 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/5.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Эрик Гиллман</p>
+                  <h3 class="tab__title">Ночная рыба</h3>
+                  <h4 class="tab__description">Бумага, акрил (50x80)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">12 500 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+            <li class="tabs__item">
+              <div class="tab">
+                <div class="tab__info">
+                  <img
+                    src="UI/images/tabs/england/6.jpg"
+                    alt=""
+                    class="tab__image"
+                    width="310" height="422" loading="lazy"
+                    decoding="async"
+                  >
+                  <p class="tab__author">Альфред Барр</p>
+                  <h3 class="tab__title">Рыжий кот</h3>
+                  <h4 class="tab__description">Цветная литография (40x60)</h4>
+                </div>
+                <div class="tab__buy">
+                  <p class="tab__price color-accent fsize24">21 000 руб</p>
+                  <button class="btn tab__button" type="button">В корзину</button>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

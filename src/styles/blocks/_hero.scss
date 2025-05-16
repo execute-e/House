@@ -6,4 +6,39 @@
         column-gap: rem(30);
         align-items: center;
     }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(20);
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(60);
+        align-items: start;
+
+        @include tablet {
+            row-gap: rem(40);
+        }
+
+        @include mobile-l {
+            padding-top: rem(60);
+        }
+    }
+
+    &__image {
+        width: rem(540);
+        height: rem(621);
+
+        @include tablet {
+            width: rem(330);
+            height: rem(380);
+        }
+
+        @include mobile-l {
+            display: none;
+        }
+    }
 }
