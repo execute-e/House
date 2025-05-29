@@ -1,7 +1,7 @@
 @use '../helpers' as *;
 
 .new {
-    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../../../UI/images/new/bg.png') no-repeat;
+    background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)), url('../../UI/images/new/bg.png') no-repeat;
     background-size: cover;
     color: var(--color-light);
     padding-block: rem(70);
