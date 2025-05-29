@@ -605,7 +605,7 @@ h4, h5, h6 {
 }
 
 .new {
-  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("../../UI/images/new/bg.png") no-repeat;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("../../../../House/UI/images/new/bg.png") no-repeat;
   background-size: cover;
   color: var(--color-light);
   padding-block: 4.375rem;
