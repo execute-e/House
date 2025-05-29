@@ -4,6 +4,8 @@
     border: rem(1) solid var(--color-accent);
     background-color: transparent;
     padding: rem(21) rem(60);
+    text-align: center;
+    justify-content: center;
 
     @include tablet {
         padding: rem(19) rem(52);
@@ -11,5 +13,16 @@
 
     @include mobile-l {
         padding: rem(15) rem(29);
+    }
+
+    &--yellow {
+        background-color: var(--color-yellow);
+        border: rem(1) solid var(--color-yellow);
+        color: var(--color-dark);
+
+        @include hover {
+            background-color: transparent;
+            color: var(--color-yellow);
+        }
     }
 }

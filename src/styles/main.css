@@ -488,6 +488,8 @@ h4, h5, h6 {
   border: 0.0625rem solid var(--color-accent);
   background-color: transparent;
   padding: 1.3125rem 3.75rem;
+  text-align: center;
+  justify-content: center;
 }
 @media (width <= 63.9375rem) {
   .btn {
@@ -497,6 +499,23 @@ h4, h5, h6 {
 @media (width <= 47.9375rem) {
   .btn {
     padding: 0.9375rem 1.8125rem;
+  }
+}
+.btn--yellow {
+  background-color: var(--color-yellow);
+  border: 0.0625rem solid var(--color-yellow);
+  color: var(--color-dark);
+}
+@media (any-hover: hover) {
+  .btn--yellow:hover {
+    background-color: transparent;
+    color: var(--color-yellow);
+  }
+}
+@media (any-hover: none) {
+  .btn--yellow:active {
+    background-color: transparent;
+    color: var(--color-yellow);
   }
 }
 
@@ -583,6 +602,34 @@ h4, h5, h6 {
   .tab__button:active {
     color: var(--color-accent);
   }
+}
+
+.new {
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("../../../UI/images/new/bg.png") no-repeat;
+  background-size: cover;
+  color: var(--color-light);
+  padding-block: 4.375rem;
+}
+.new__inner {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+.new__header {
+  width: 50%;
+  display: flex;
+  column-gap: 1.25rem;
+  align-items: center;
+}
+.new__body {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.25rem;
+}
+.new__button {
+  margin-top: 1.875rem;
+  align-self: start;
 }
 
 /*# sourceMappingURL=main.css.map */
